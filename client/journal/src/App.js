@@ -1,5 +1,14 @@
 import React from "react";
 
+import { css } from "@emotion/react";
+import styled from "@emotion/styled"
+
+import Entries from "./components/Entries";
+import Header from "./components/Header";
+import EntryForm from "./components/EntryForm";
+
+import { Route, Routes } from "react-router-dom";
+
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { ApolloProvider, useQuery, gql, useMutation } from '@apollo/client'
 
@@ -20,21 +29,6 @@ const GET_ENTRIES = gql`
   }
 `
 
-const Entries = () => {
-  const { loading, error, data } = useQuery(GET_ENTRIES)
-
-
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error :(</p>
-
-  return (
-    <div>
-      {data.entries.map(({ text }) => (
-        <h3>{text}</h3>
-      ))}
-    </div>
-  )
-}
 
 function AddEntry() {
   let input
@@ -85,8 +79,11 @@ return (
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Entries />
-      <AddEntry />
+      <Header />
+      <Routes>
+        <Route path="/" element={<EntryForm />}></Route>
+        <Route path="/entries" element={<Entries />}></Route>
+      </Routes>
     </ApolloProvider>
   )
 }
