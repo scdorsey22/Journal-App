@@ -1,5 +1,7 @@
 import React from "react";
 import { useQuery, gql, } from '@apollo/client'
+import { Paper, Container, Typography, Box, Button } from "@mui/material";
+import { Grid, TextField, Card } from "@mui/material";
 
 const GET_ENTRIES = gql`
   {
@@ -17,17 +19,20 @@ const Entries = () => {
   if (error) return <p>Error :(</p>
 
   return (
-    <div>
-      <div>
+    <Container component="main" maxWidth="sm" sx={{ mb: 10 }}>
+      <Paper variant="standard" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+      <Box>
       {data.entries.map(({ text }) => (
-        <div>
-          <h3>{text}</h3>
-          <button>X</button>
-        </div>
+        <Card>
+          <Typography>{text}</Typography>
+          <Button>Edit</Button>
+          <Button>Delete</Button>
+        </Card>
       ) 
       )}
-      </div>
-    </div>
+      </Box>
+      </Paper>
+    </Container>
   
   )
 }
