@@ -15,61 +15,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
-// const GET_ENTRIES = gql`
-//   {
-//     entries {
-//       id
-//       text
-//     }
-//   }
-// `
-
-
-// function AddEntry() {
-//   let input
-//   const [createEntry] = useMutation(gql`
-//   mutation CreateEntry($text: String!) {
-//     createEntry(text: $text) {
-//       id 
-//       text
-//     }
-//   }
-//   `,
-//   {
-//     update(
-//       cache,
-//       {
-//         data: { createEntry },
-//       },
-//     ) {
-//       const { entries } = cache.readQuery({ query: GET_ENTRIES })
-//       cache.writeQuery({
-//         query: GET_ENTRIES,
-//         data: {entries: [createEntry].concat(entries)}
-//       })
-//     }
-//   }
-  
-//   )
-// return (
-//   <div>
-//     <form onSubmit={e => {
-//       e.preventDefault()
-//       createEntry({ variables: { text: input.value } })
-//       input.value = ''
-//     }}
-//     >
-//       <input
-//       ref={node => {
-//         input = node
-//       }}
-//       />
-//       <button type="submit">Add Entry</button>
-//     </form>
-//   </div>
-// )
-
-// }
 
 function App() {
   return (
