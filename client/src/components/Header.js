@@ -21,15 +21,28 @@ export default function Header() {
           sx={{
             position: 'relative',
             borderBottom: (t) => `1px solid ${t.palette.divider}`,
+         
+            overflow: 'hidden'
           }}
         >
           <Toolbar sx={{ justifyContent: 'space-between' }}>
             <Typography variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              flexGrow: 1,
+              justifyContent: 'center'
+            }}
+            >
               Cultivate Journal
             </Typography>
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <Box sx={{
+              display: 'flex',
+              alignItems: 'center',
+              flexGrow: 1,
+              justifyContent: 'center'
+            }}>
           
             <Link className='navBarLink' to="/">
             <IconButton sx={{ fontSize: 60 }}>
@@ -38,7 +51,7 @@ export default function Header() {
               </IconButton>
             </Link>
             <Link class='navBarLink' to="/entries">
-              <IconButton sx={{ fontSize: 32 }}>
+              <IconButton sx={{ fontSize: 100 }}>
               <SearchOutlined />
 
               </IconButton>
