@@ -42,7 +42,7 @@ export default function EntryForm( { entries }) {
   )
 
     return (
-      <ThemeProvider theme={theme}>
+      
         <Container component="main" maxWidth="md" sx={{ mb: 10 }}>
             <Paper variant="standard" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
                 <form onSubmit={e => {
@@ -59,7 +59,13 @@ export default function EntryForm( { entries }) {
                     variant="outlined"
                     multiline
                     rows={16}
-        
+                    sx={{
+                    '& .MuiInputLabel-root': {
+                      typography: 'body1',
+                      fontFamily: 'Alegreya Sans',
+                      fontWeight: 'bold',
+                    }
+                  }}
                     /> 
                 </Grid>
             </React.Fragment>
@@ -67,8 +73,9 @@ export default function EntryForm( { entries }) {
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                     <Button
                     type="submit"
+                    color='secondary'
                     variant="contained"
-                    sx={{ mt: 3, ml: 1 }}
+                    sx={{ mt: 3, ml: 1, }}
                     >Enter
                     </Button>
                 </Box>
@@ -78,5 +85,5 @@ export default function EntryForm( { entries }) {
             </Paper>
          
         </Container>
-        </ThemeProvider>
+       
     )}

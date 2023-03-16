@@ -5,6 +5,7 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from "react-router-dom"
 import SearchOutlined from '@mui/icons-material/SearchOutlined';
+import logo from '../assets/Logo.png'
 
 const theme = createTheme()
 
@@ -26,21 +27,23 @@ export default function Header() {
           }}
         >
           <Toolbar sx={{ justifyContent: 'space-between' }}>
-            <Typography variant="h6"
+          <img src={logo} alt="Logo" style={{width: '150px', marginLeft: 10,  }} />
+            <Typography variant="h5"
             component="div"
             sx={{
               display: 'flex',
               alignItems: 'center',
-              flexGrow: 1,
-              justifyContent: 'center'
+            
+              justifyContent: 'center',
+              fontFamily: 'Alegreya'
             }}
             >
               Cultivate Journal
+          
             </Typography>
             <Box sx={{
               display: 'flex',
               alignItems: 'center',
-              flexGrow: 1,
               justifyContent: 'center'
             }}>
           
@@ -50,7 +53,7 @@ export default function Header() {
 
               </IconButton>
             </Link>
-            <Link class='navBarLink' to="/entries">
+            <Link className='navBarLink' to="/entries">
               <IconButton sx={{ fontSize: 100 }}>
               <SearchOutlined />
 
