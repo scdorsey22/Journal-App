@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Background from '../assets/background.svg'; 
 import Logo from '../assets/Logo.svg'
 
-function Login() {
+function SignIn() {
 
 
   return (
@@ -28,7 +28,7 @@ function Login() {
       >
        <img src={Logo} alt="Logo" style={{ height: '250px', marginRight: '10px' }} />
         <Typography component="h1" variant="h2" sx={{fontFamily: 'Alegreya', color: 'white', marginTop: '-20px'}}>
-          WELCOME
+          Sign In
         </Typography>
         <Typography component="h6" variant="h5" sx={{fontFamily: 'Alegreya', color: 'white'}}>
           Journal. Stay Focused. 
@@ -40,10 +40,7 @@ function Login() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',}}>
-        <Button 
-        component={Link}
-  to="/sign-in"
-        fullWidth variant="contained" 
+        <Button type="submit" fullWidth variant="contained" 
         sx={{ 
             mt: 3, 
             mb: 2, 
@@ -71,5 +68,4 @@ function Login() {
   );
 }
 
-export default Login;
-
+export default SignIn;
