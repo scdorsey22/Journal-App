@@ -63,7 +63,7 @@ export default function EntryForm( { entries }) {
                     '& .MuiInputLabel-root': {
                       typography: 'body1',
                       fontFamily: 'Alegreya Sans',
-                      fontWeight: 'bold',
+                     
                     }
                   }}
                     /> 

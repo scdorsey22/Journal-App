@@ -22,7 +22,7 @@ function App() {
   const location = useLocation()
   return (
     <ApolloProvider client={client}>
-    {location.pathname !== "/login" && location.pathname !== "sign-in" && <Header />}
+    {location.pathname !== "/login" && location.pathname !== "/sign-in" && <Header />}
       <Routes>
         <Route path="login" element={<LoginPage />}></Route>
         <Route path="sign-in" element={<SignIn />}></Route>

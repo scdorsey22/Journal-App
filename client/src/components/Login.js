@@ -26,8 +26,8 @@ function Login() {
           mt: 0,
         }}
       >
-       <img src={Logo} alt="Logo" style={{ height: '250px', marginRight: '10px' }} />
-        <Typography component="h1" variant="h2" sx={{fontFamily: 'Alegreya', color: 'white', marginTop: '-20px'}}>
+       <img src={Logo} alt="Logo" style={{ height: '300px', marginRight: '10px' }} />
+        <Typography component="h1" variant="h2" sx={{fontFamily: 'Alegreya', color: 'white', fontWeight: 'bold' , marginTop: '-20px'}}>
           WELCOME
         </Typography>
         <Typography component="h6" variant="h5" sx={{fontFamily: 'Alegreya', color: 'white'}}>
@@ -45,7 +45,7 @@ function Login() {
   to="/sign-in"
         fullWidth variant="contained" 
         sx={{ 
-            mt: 3, 
+            mt: 15, 
             mb: 2, 
             width: '100%', 
             fontFamily: 'Alegreya', 
